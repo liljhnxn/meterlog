@@ -12,7 +12,7 @@
 
 Utility billing disputes between property managers, landlords, tenants, and commercial occupants are among the most persistent points of friction in global property leasing. Traditional utility tracking relies on manual meter checks, error-prone paper logs, or centralized spreadsheets with zero cryptographic verifiability.
 
-**MeterLog** is an on-chain electricity meter logging and energy consumption protocol deployed on **Botchain Testnet**. It enables property managers and occupants to register meters, log periodic kilowatt-hour (kWh) readings, and calculate energy consumption through automated smart contract logic. By ensuring that historical data is immutable, timestamped by the block header, and publicly verifiable, MeterLog removes trust dependencies, eliminates billing disagreements, and establishes an auditable baseline for energy accountability.
+**MeterLog** is an on-chain electricity meter logging and energy consumption protocol deployed on **BOT Chain Mainnet**. It enables property managers and occupants to register meters, log periodic kilowatt-hour (kWh) readings, and calculate energy consumption through automated smart contract logic. By ensuring that historical data is immutable, timestamped by the block header, and publicly verifiable, MeterLog removes trust dependencies, eliminates billing disagreements, and establishes an auditable baseline for energy accountability.
 
 ---
 
@@ -46,8 +46,8 @@ MeterLog delivers a lightweight, accessible Web3 alternative that works with **a
 └───────────────────────────┬────────────────────────────┘
                             │ Viem / EIP-1193 (MetaMask)
 ┌───────────────────────────▼────────────────────────────┐
-│                Botchain Testnet (EVM)                  │
-│       RPC: https://rpc.bohr.life (Chain ID: 968)       │
+│                 BOT Chain Mainnet (EVM)                │
+│       RPC: https://rpc.botchain.ai (Chain ID: 677)     │
 └───────────────────────────┬────────────────────────────┘
                             │ EVM Bytecode Execution
 ┌───────────────────────────▼────────────────────────────┐
@@ -117,9 +117,11 @@ MeterLog delivers a lightweight, accessible Web3 alternative that works with **a
 
 ---
 
-## 7. Official Project Links
+## 7. Official Project & Ecosystem Links
 
 * **Live dApp Repository**: [https://github.com/liljhnxn/meterlog](https://github.com/liljhnxn/meterlog)
-* **Contract on Mainnet Explorer**: [https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code)
-* **Mainnet RPC Endpoint**: `https://rpc.botchain.ai`
+* **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+* **Verified Contract**: [https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code)
+* **RPC Endpoint**: `https://rpc.botchain.ai`
 

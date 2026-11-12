@@ -156,26 +156,71 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-charcoal-800 bg-charcoal-950/60 py-6 text-xs text-charcoal-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-accent" />
-            <span>MeterLog • Verified On-Chain Ledger</span>
+      {/* Footer / BOT Chain Ecosystem Section */}
+      <footer className="border-t border-charcoal-800 bg-charcoal-950 py-8 text-xs text-charcoal-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pb-6 border-b border-charcoal-800/80">
+            {/* BOT Chain Branding & Logo */}
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center text-accent font-bold">
+                ⚡
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-sm text-charcoal-100">BOT Chain Ecosystem</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-charcoal-800 border border-charcoal-700 text-accent font-semibold">
+                    Mainnet (Chain ID: 677)
+                  </span>
+                </div>
+                <p className="text-[11px] text-charcoal-400 mt-0.5">
+                  MeterLog is natively deployed and verified on BOT Chain.
+                </p>
+              </div>
+            </div>
+
+            {/* Required BOT Chain Ecosystem Links */}
+            <div className="flex flex-wrap items-center gap-4 text-xs">
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-charcoal-200 hover:text-accent hover:border-accent/40 transition-colors"
+              >
+                <span>BOT Chain website</span>
+                <ExternalLink className="w-3.5 h-3.5 text-charcoal-400" />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-charcoal-200 hover:text-accent hover:border-accent/40 transition-colors"
+              >
+                <span>BOT Chain explorer</span>
+                <ExternalLink className="w-3.5 h-3.5 text-charcoal-400" />
+              </a>
+            </div>
           </div>
 
-          <div className="flex items-center gap-6 font-mono text-[11px] text-charcoal-400">
-            <span>Network: Botchain Mainnet</span>
-            <span>Chain ID: 677</span>
-            <a
-              href="https://scan.botchain.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="text-accent hover:underline flex items-center gap-1"
-            >
-              <span>BotchainScan Explorer</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-charcoal-400">
+            <div className="flex items-center gap-2">
+              <Shield className="w-3.5 h-3.5 text-accent" />
+              <span>MeterLog • Verified On-Chain Electricity Tracker</span>
+            </div>
+
+            <div className="flex items-center gap-4 font-mono">
+              <span>Native Currency: BOT</span>
+              <span>•</span>
+              <a
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-accent hover:underline flex items-center gap-1"
+              >
+                <span>Verified Contract: {CONTRACT_ADDRESS.slice(0, 6)}...{CONTRACT_ADDRESS.slice(-4)}</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

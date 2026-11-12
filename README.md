@@ -79,15 +79,16 @@ MeterLog/
 ├── contracts/
 │   └── MeterLog.sol          # Primary Solidity smart contract
 ├── lib/
-│   ├── botchain.ts           # Botchain Testnet Viem chain definition
+│   ├── botchain.ts           # BOT Chain Viem chain definition
 │   ├── contractAbi.ts        # Smart contract ABI and TypeScript interfaces
 │   ├── utils.ts              # Formatting & helper utilities
 │   └── wagmi.ts              # Wagmi configuration
 ├── scripts/
-│   └── deploy.ts             # Hardhat deployment script for Botchain
+│   ├── deploy.ts             # Hardhat deployment script for BOT Chain
+│   └── deployMainnet.ts      # Gas-optimized mainnet deploy script
 ├── test/
 │   └── MeterLog.test.ts      # Comprehensive Hardhat smart contract tests
-├── hardhat.config.ts         # Hardhat configuration with Botchain Testnet
+├── hardhat.config.ts         # Hardhat configuration with BOT Chain Mainnet
 ├── package.json
 └── README.md
 ```
@@ -169,7 +170,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Connect MetaMask, make sure your wallet is set to **Botchain Testnet (Chain ID 968)**, and begin logging meter readings!
+Connect MetaMask, make sure your wallet is set to **BOT Chain Mainnet (Chain ID 677)**, and begin logging meter readings!
+
+---
+
+## 🔗 Official Ecosystem Links
+
+* **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+* **Verified Contract**: [https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code)
 
 ---
 

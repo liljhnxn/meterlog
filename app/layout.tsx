@@ -5,7 +5,7 @@ import { Providers } from "@/components/Providers";
 export const metadata: Metadata = {
   title: "MeterLog - On-chain Electricity Meter Tracking",
   description:
-    "Lightweight, secure on-chain electricity meter reading and consumption tracker on Botchain Testnet.",
+    "Lightweight, secure on-chain electricity meter reading and consumption tracker on BOT Chain.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",

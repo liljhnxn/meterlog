@@ -13,7 +13,7 @@ async function main() {
   console.log("Deploying MeterLog contract with account:", deployer.address);
 
   const balance = await ethers.provider.getBalance(deployer.address);
-  console.log("Account balance:", ethers.formatEther(balance), "native tokens");
+  console.log("Account balance:", ethers.formatEther(balance), "BOT");
 
   const MeterLogFactory = await ethers.getContractFactory("MeterLog");
   const meterLog = await MeterLogFactory.deploy();
@@ -21,13 +21,14 @@ async function main() {
 
   const contractAddress = await meterLog.getAddress();
   console.log("MeterLog successfully deployed to:", contractAddress);
+  console.log("Explorer:", `https://scan.botchain.ai/address/${contractAddress}`);
   console.log("----------------------------------------------------");
 
   // Save deployed address and ABI to frontend lib directory
   const deployedInfo = {
     address: contractAddress,
-    network: (await ethers.provider.getNetwork()).name,
-    chainId: Number((await ethers.provider.getNetwork()).chainId),
+    network: "botchain",
+    chainId: 677,
     deployedAt: new Date().toISOString(),
   };
 
