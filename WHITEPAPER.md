@@ -1,9 +1,9 @@
 # MeterLog: Decentralized Electricity Meter & Consumption Ledger
 **A Lightweight On-Chain Utility Verification Protocol on Botchain**
 
-*Version 1.0 — November 2026*  
-*Network: Botchain Testnet (Chain ID: 968)*  
-*Verified Contract: [0x8f51aE358b30c5499961b09b11bAB243C8F05B7b](https://scan.bohr.life/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code)*  
+*Version 1.1 — November 2026*  
+*Network: Botchain Mainnet (Chain ID: 677)*  
+*Verified Mainnet Contract: [0x05a9C5f650e497790116855838616f30b4E3E8bF](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code)*  
 *GitHub: [https://github.com/liljhnxn/meterlog](https://github.com/liljhnxn/meterlog)*
 
 ---
@@ -92,8 +92,8 @@ MeterLog delivers a lightweight, accessible Web3 alternative that works with **a
 * **Residential Landlords**: Trustless historical records for security deposit reconciliations.
 
 ### Slide 5: Product & Live Demo
-* **Live Deployment**: Botchain Testnet (Chain ID 968).
-* **Contract**: `0x8f51aE358b30c5499961b09b11bAB243C8F05B7b`
+* **Live Deployment**: Botchain Mainnet (Chain ID 677).
+* **Contract**: `0x05a9C5f650e497790116855838616f30b4E3E8bF`
 * **Features**: One-click MetaMask connect, network switch prompts, live kWh delta previews, chronological audit modals, and search filters.
 
 ### Slide 6: Ecosystem Synergy with Botchain
@@ -102,9 +102,9 @@ MeterLog delivers a lightweight, accessible Web3 alternative that works with **a
 * Foundation for automated micropayments and AI-driven energy optimization agents.
 
 ### Slide 7: Roadmap
-* **Phase 1 (Completed)**: Core protocol deployment, unit tests (17/17 passing), BohrScan verification, responsive dApp.
+* **Phase 1 (Completed)**: Core protocol deployment to Botchain Mainnet, unit tests (17/17 passing), BotchainScan verification, responsive dApp.
 * **Phase 2 (Q1 2027)**: Mobile-optimized photo verification (OCR reading recognition) & push alerts.
-* **Phase 3 (Q2 2027)**: Automated tariff rate conversion (kWh to BOHR native token billing & escrow settlements).
+* **Phase 3 (Q2 2027)**: Automated tariff rate conversion (kWh to BOT native token billing & escrow settlements).
 * **Phase 4 (Q3 2027)**: Botchain AI agent integration for predictive energy consumption and anomaly detection.
 
 ---
@@ -112,7 +112,7 @@ MeterLog delivers a lightweight, accessible Web3 alternative that works with **a
 ## 6. Security, Testing & Verification
 
 * **Unit Testing**: 100% test pass rate (17 Hardhat unit tests covering edge cases, math constraints, and access control).
-* **Source Code Verification**: Fully verified source code and ABI available on [BohrScan](https://scan.bohr.life/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code).
+* **Source Code Verification**: Fully verified source code and ABI available on [BotchainScan](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code).
 * **Zero Secret Exposure**: Client-side architecture with zero private key retention; all transactions are signed via user-approved Web3 wallets.
 
 ---
@@ -120,5 +120,6 @@ MeterLog delivers a lightweight, accessible Web3 alternative that works with **a
 ## 7. Official Project Links
 
 * **Live dApp Repository**: [https://github.com/liljhnxn/meterlog](https://github.com/liljhnxn/meterlog)
-* **Contract on Explorer**: [https://scan.bohr.life/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code](https://scan.bohr.life/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code)
-* **RPC Endpoint**: `https://rpc.bohr.life`
+* **Contract on Mainnet Explorer**: [https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code)
+* **Mainnet RPC Endpoint**: `https://rpc.botchain.ai`
+

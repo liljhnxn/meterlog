@@ -134,7 +134,7 @@ export default function Home() {
             <div className="text-xs text-charcoal-400">
               Contract:{" "}
               <a
-                href={`https://scan.bohr.life/address/${CONTRACT_ADDRESS}`}
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
                 target="_blank"
                 rel="noreferrer"
                 className="font-mono text-accent hover:underline inline-flex items-center gap-1"
@@ -165,15 +165,15 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-6 font-mono text-[11px] text-charcoal-400">
-            <span>Network: Botchain Testnet</span>
-            <span>Chain ID: 968</span>
+            <span>Network: Botchain Mainnet</span>
+            <span>Chain ID: 677</span>
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="text-accent hover:underline flex items-center gap-1"
             >
-              <span>BohrScan Explorer</span>
+              <span>BotchainScan Explorer</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>

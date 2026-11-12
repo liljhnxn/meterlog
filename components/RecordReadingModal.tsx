@@ -100,7 +100,7 @@ export function RecordReadingModal({ meter, isOpen, onClose, onSuccess }: Record
           </div>
           <h3 className="text-lg font-bold text-charcoal-100 mb-2">Reading Recorded!</h3>
           <p className="text-sm text-charcoal-300 mb-6">
-            Reading of <strong>{readingInput} kWh</strong> has been committed to Botchain Testnet for &quot;{meter.name}&quot;.
+            Reading of <strong>{readingInput} kWh</strong> has been committed to Botchain Mainnet for &quot;{meter.name}&quot;.
           </p>
           <button
             onClick={() => {
@@ -219,7 +219,7 @@ export function RecordReadingModal({ meter, isOpen, onClose, onSuccess }: Record
             {isConfirming && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-charcoal-800 border border-charcoal-700 text-accent text-xs">
                 <Loader2 className="w-4 h-4 animate-spin text-accent" />
-                <span>Submitting reading to Botchain Testnet...</span>
+                <span>Submitting reading to Botchain Mainnet...</span>
               </div>
             )}
 

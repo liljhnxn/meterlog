@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useChainId, useSwitchChain } from "wagmi";
 import { shortenAddress } from "@/lib/utils";
-import { botchainTestnet } from "@/lib/botchain";
+import { botchainMainnet } from "@/lib/botchain";
 import { Zap, Wallet, AlertTriangle, CheckCircle2, ChevronDown, Copy, Check, LogOut, ArrowRightLeft } from "lucide-react";
 
 interface HeaderProps {
@@ -20,7 +20,7 @@ export function Header({ onOpenRegister }: HeaderProps) {
   const [copied, setCopied] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const isCorrectNetwork = chainId === botchainTestnet.id;
+  const isCorrectNetwork = chainId === botchainMainnet.id;
 
   const handleCopy = () => {
     if (address) {
@@ -65,15 +65,15 @@ export function Header({ onOpenRegister }: HeaderProps) {
               {isCorrectNetwork ? (
                 <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-800 border border-charcoal-700 text-xs text-charcoal-200">
                   <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  <span>Botchain Testnet</span>
+                  <span>Botchain Mainnet</span>
                 </div>
               ) : (
                 <button
-                  onClick={() => switchChain({ chainId: botchainTestnet.id })}
+                  onClick={() => switchChain({ chainId: botchainMainnet.id })}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs hover:bg-amber-500/20 transition-colors"
                 >
                   <AlertTriangle className="w-3.5 h-3.5" />
-                  <span>Switch Network (968)</span>
+                  <span>Switch Network (677)</span>
                 </button>
               )}
 
@@ -126,13 +126,13 @@ export function Header({ onOpenRegister }: HeaderProps) {
                     {!isCorrectNetwork && (
                       <button
                         onClick={() => {
-                          switchChain({ chainId: botchainTestnet.id });
+                          switchChain({ chainId: botchainMainnet.id });
                           setDropdownOpen(false);
                         }}
                         className="w-full flex items-center gap-2 px-3 py-2 text-xs text-amber-400 hover:bg-amber-500/10 rounded-lg transition-colors"
                       >
                         <ArrowRightLeft className="w-3.5 h-3.5" />
-                        <span>Switch to Botchain</span>
+                        <span>Switch to Botchain Mainnet</span>
                       </button>
                     )}
                     <button

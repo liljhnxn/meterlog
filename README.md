@@ -1,6 +1,6 @@
 # MeterLog ⚡
 
-An on-chain electricity meter reading and energy consumption tracker deployed to **Botchain Testnet**. MeterLog enables landlords, property managers, tenants, and businesses to register electricity meters, record periodic meter readings (kWh), compute real-time electricity consumption, and inspect immutable chronological reading histories on-chain.
+An on-chain electricity meter reading and energy consumption tracker deployed to **Botchain Mainnet**. MeterLog enables landlords, property managers, tenants, and businesses to register electricity meters, record periodic meter readings (kWh), compute real-time electricity consumption, and inspect immutable chronological reading histories on-chain.
 
 ---
 
@@ -8,7 +8,7 @@ An on-chain electricity meter reading and energy consumption tracker deployed to
 
 1. **MetaMask & Web3 Wallet Integration**
    - Seamless MetaMask connection via Wagmi & Viem.
-   - Real-time network detection for **Botchain Testnet (Chain ID: 968)**.
+   - Real-time network detection for **Botchain Mainnet (Chain ID: 677)**.
    - Interactive prompt to switch networks with a single click if an unsupported chain is selected.
 
 2. **Meter Registration**
@@ -35,15 +35,16 @@ An on-chain electricity meter reading and energy consumption tracker deployed to
 
 ---
 
-## ⛓️ Blockchain Configuration (Botchain Testnet)
+## ⛓️ Blockchain Configuration (Botchain Mainnet)
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Block Explorer** | `https://scan.bohr.life` |
-| **Native Currency** | BOHR |
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Native Currency** | BOT |
+| **Deployed Contract** | [`0x05a9C5f650e497790116855838616f30b4E3E8bF`](https://scan.botchain.ai/address/0x05a9C5f650e497790116855838616f30b4E3E8bF#code) |
 
 ---
 
@@ -111,13 +112,13 @@ cp .env.example .env.local
 
 Ensure your `.env.local` contains:
 ```env
-NEXT_PUBLIC_BOTCHAIN_RPC_URL=https://rpc.bohr.life
-NEXT_PUBLIC_BOTCHAIN_CHAIN_ID=968
-NEXT_PUBLIC_BOTCHAIN_EXPLORER=https://scan.bohr.life
-NEXT_PUBLIC_CONTRACT_ADDRESS=<DEPLOYED_CONTRACT_ADDRESS>
+NEXT_PUBLIC_BOTCHAIN_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_BOTCHAIN_CHAIN_ID=677
+NEXT_PUBLIC_BOTCHAIN_EXPLORER=https://scan.botchain.ai
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x05a9C5f650e497790116855838616f30b4E3E8bF
 
 # For contract deployment
-PRIVATE_KEY=<YOUR_PRIVATE_KEY_WITHOUT_0x_OR_WITH_0x>
+PRIVATE_KEY=<YOUR_PRIVATE_KEY>
 ```
 
 ---
@@ -134,32 +135,22 @@ Run the complete test suite:
 npm run test
 ```
 
-The test suite covers:
-- Meter registration and auto-incremented IDs.
-- Input validation (rejects empty name or location).
-- Initial reading recording (zero baseline consumption).
-- Subsequent readings and accurate incremental consumption computation.
-- Rejection of readings lower than the previous reading.
-- Access control verification (preventing unauthorized reading submissions and edits).
-- Meter information updates by owner.
-- Chronological reading history retrieval.
-- Global statistics aggregation.
-
 ---
 
-## 🚢 Deploying to Botchain Testnet
+## 🚢 Deploying to Botchain Mainnet
 
-Ensure your deployer account has testnet **BOHR** tokens, then run:
+Ensure your deployer account has native **BOT** tokens, then run:
 
 ```bash
-npm run deploy:botchain
+npm run deploy:mainnet
 ```
 
 The script will:
-1. Connect to Botchain Testnet via `https://rpc.bohr.life`.
-2. Deploy `MeterLog.sol`.
-3. Output the deployed contract address.
-4. Update `lib/deployedContract.json` with deployment metadata.
+1. Connect to Botchain Mainnet via `https://rpc.botchain.ai`.
+2. Estimate optimal gas parameters (~0.028 BOT) to prevent overpaying fees.
+3. Deploy `MeterLog.sol`.
+4. Output the deployed contract address.
+5. Update `lib/deployedContract.json` and `.env.local` automatically.
 
 After deploying, copy the deployed address into your `.env.local`:
 ```env

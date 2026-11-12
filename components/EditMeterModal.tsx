@@ -90,7 +90,7 @@ export function EditMeterModal({ meter, isOpen, onClose, onSuccess }: EditMeterM
           </div>
           <h3 className="text-lg font-bold text-charcoal-100 mb-2">Meter Updated!</h3>
           <p className="text-sm text-charcoal-300 mb-6">
-            Meter information for &quot;{name}&quot; has been updated on Botchain Testnet.
+            Meter information for &quot;{name}&quot; has been updated on Botchain Mainnet.
           </p>
           <button
             onClick={() => {
@@ -176,7 +176,7 @@ export function EditMeterModal({ meter, isOpen, onClose, onSuccess }: EditMeterM
           {isConfirming && (
             <div className="flex items-center gap-2 p-3 rounded-lg bg-charcoal-800 border border-charcoal-700 text-accent text-xs">
               <Loader2 className="w-4 h-4 animate-spin text-accent" />
-              <span>Updating meter on Botchain Testnet...</span>
+              <span>Updating meter on Botchain Mainnet...</span>
             </div>
           )}
 

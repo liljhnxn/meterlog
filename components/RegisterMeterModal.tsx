@@ -77,7 +77,7 @@ export function RegisterMeterModal({ isOpen, onClose, onSuccess }: RegisterMeter
           </div>
           <h3 className="text-lg font-bold text-charcoal-100 mb-2">Meter Registered!</h3>
           <p className="text-sm text-charcoal-300 mb-6">
-            The electricity meter &quot;{name}&quot; has been recorded on Botchain Testnet.
+            The electricity meter &quot;{name}&quot; has been recorded on Botchain Mainnet.
           </p>
           <button
             onClick={() => {
@@ -170,7 +170,7 @@ export function RegisterMeterModal({ isOpen, onClose, onSuccess }: RegisterMeter
           {isConfirming && (
             <div className="flex items-center gap-2 p-3 rounded-lg bg-charcoal-800 border border-charcoal-700 text-accent text-xs">
               <Loader2 className="w-4 h-4 animate-spin text-accent" />
-              <span>Confirming on Botchain Testnet...</span>
+              <span>Confirming on Botchain Mainnet...</span>
             </div>
           )}
 
