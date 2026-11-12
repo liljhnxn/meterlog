@@ -64,8 +64,9 @@ export function Header({ onOpenRegister }: HeaderProps) {
               {/* Network Pill */}
               {isCorrectNetwork ? (
                 <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-800 border border-charcoal-700 text-xs text-charcoal-200">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  <span>Botchain Mainnet</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/botchain-logo.png" alt="BOT Chain" className="w-3.5 h-3.5 rounded object-cover" />
+                  <span>BOT Chain Mainnet</span>
                 </div>
               ) : (
                 <button
@@ -73,7 +74,7 @@ export function Header({ onOpenRegister }: HeaderProps) {
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs hover:bg-amber-500/20 transition-colors"
                 >
                   <AlertTriangle className="w-3.5 h-3.5" />
-                  <span>Switch Network (677)</span>
+                  <span>Switch to BOT Chain (677)</span>
                 </button>
               )}
 

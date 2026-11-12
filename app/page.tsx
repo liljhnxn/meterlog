@@ -12,10 +12,11 @@ import { EditMeterModal } from "@/components/EditMeterModal";
 import { MeterDetailModal } from "@/components/MeterDetailModal";
 import { METER_LOG_ABI, MeterData } from "@/lib/contractAbi";
 import { CONTRACT_ADDRESS } from "@/lib/wagmi";
-import { Shield, Zap, Plus, RefreshCw, ExternalLink } from "lucide-react";
+import { Shield, Zap, Plus, RefreshCw, ExternalLink, Copy, Check, Globe } from "lucide-react";
 
 export default function Home() {
   const { isConnected } = useAccount();
+  const [copied, setCopied] = useState(false);
 
   // Modals state
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -73,6 +74,12 @@ export default function Home() {
     handleRefresh();
   };
 
+  const handleCopyContract = () => {
+    navigator.clipboard.writeText(CONTRACT_ADDRESS);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-charcoal-900 text-charcoal-100">
       {/* Top Header */}
@@ -83,6 +90,91 @@ export default function Home() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        {/* BOT Chain Ecosystem Banner at Front of Interface */}
+        <div className="rounded-2xl bg-charcoal-850 border border-charcoal-700/80 p-4 sm:p-5 shadow-sm">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/botchain-logo.png"
+                alt="BOT Chain Logo"
+                className="w-11 h-11 rounded-xl object-cover border border-charcoal-700 shadow-sm shrink-0"
+              />
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="font-bold text-base text-charcoal-100">BOT Chain Network</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-accent font-semibold">
+                    Mainnet (Chain ID: 677)
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 mt-1 text-xs text-charcoal-400">
+                  <span>Mainnet Contract:</span>
+                  <span className="font-mono text-charcoal-200 select-all font-semibold">
+                    {CONTRACT_ADDRESS}
+                  </span>
+                  <button
+                    onClick={handleCopyContract}
+                    className="p-1 rounded hover:bg-charcoal-700 text-charcoal-400 hover:text-charcoal-200 transition-colors"
+                    title="Copy contract address"
+                  >
+                    {copied ? (
+                      <Check className="w-3.5 h-3.5 text-accent" />
+                    ) : (
+                      <Copy className="w-3.5 h-3.5" />
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* BOT Chain Links with Logo at the Front */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-charcoal-900 border border-charcoal-700 hover:border-accent/40 text-charcoal-200 hover:text-accent transition-colors text-xs font-medium"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-cover"
+                />
+                <span>BOT Chain website</span>
+                <ExternalLink className="w-3.5 h-3.5 text-charcoal-400" />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-charcoal-900 border border-charcoal-700 hover:border-accent/40 text-charcoal-200 hover:text-accent transition-colors text-xs font-medium"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-cover"
+                />
+                <span>BOT Chain explorer</span>
+                <ExternalLink className="w-3.5 h-3.5 text-charcoal-400" />
+              </a>
+
+              <a
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}#code`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-accent/15 border border-accent/30 text-accent hover:bg-accent hover:text-charcoal-950 transition-colors text-xs font-medium"
+              >
+                <Shield className="w-3.5 h-3.5" />
+                <span>Verified Contract</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Welcome / Dashboard Section */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-charcoal-800 pb-6">
           <div>
@@ -90,7 +182,7 @@ export default function Home() {
               Electricity Meter Ledger
             </h1>
             <p className="text-xs sm:text-sm text-charcoal-400 mt-1">
-              Verifiable, tamper-proof tracking of electricity meter readings and consumption on Botchain.
+              Verifiable, tamper-proof tracking of electricity meter readings and consumption on BOT Chain.
             </p>
           </div>
 
@@ -131,15 +223,15 @@ export default function Home() {
               <Zap className="w-4 h-4 text-accent" />
               <h2 className="text-base font-semibold text-charcoal-100">Registered Meters</h2>
             </div>
-            <div className="text-xs text-charcoal-400">
-              Contract:{" "}
+            <div className="text-xs text-charcoal-400 flex items-center gap-2">
+              <span>Mainnet Contract:</span>
               <a
-                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}#code`}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-accent hover:underline inline-flex items-center gap-1"
+                className="font-mono text-accent hover:underline inline-flex items-center gap-1 font-semibold"
               >
-                {CONTRACT_ADDRESS ? `${CONTRACT_ADDRESS.slice(0, 6)}...${CONTRACT_ADDRESS.slice(-4)}` : "Not Configured"}
+                {CONTRACT_ADDRESS}
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
@@ -162,9 +254,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pb-6 border-b border-charcoal-800/80">
             {/* BOT Chain Branding & Logo */}
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center text-accent font-bold">
-                ⚡
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/botchain-logo.png"
+                alt="BOT Chain Logo"
+                className="w-9 h-9 rounded-lg object-cover border border-charcoal-700 shadow-sm shrink-0"
+              />
               <div>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-sm text-charcoal-100">BOT Chain Ecosystem</span>
@@ -178,14 +273,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Required BOT Chain Ecosystem Links */}
-            <div className="flex flex-wrap items-center gap-4 text-xs">
+            {/* Required BOT Chain Ecosystem Links with Logo at the Front */}
+            <div className="flex flex-wrap items-center gap-3 text-xs">
               <a
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-charcoal-200 hover:text-accent hover:border-accent/40 transition-colors"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-charcoal-200 hover:text-accent hover:border-accent/40 transition-colors"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-cover"
+                />
                 <span>BOT Chain website</span>
                 <ExternalLink className="w-3.5 h-3.5 text-charcoal-400" />
               </a>
@@ -194,8 +295,14 @@ export default function Home() {
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-charcoal-200 hover:text-accent hover:border-accent/40 transition-colors"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-charcoal-200 hover:text-accent hover:border-accent/40 transition-colors"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-cover"
+                />
                 <span>BOT Chain explorer</span>
                 <ExternalLink className="w-3.5 h-3.5 text-charcoal-400" />
               </a>
@@ -212,12 +319,12 @@ export default function Home() {
               <span>Native Currency: BOT</span>
               <span>•</span>
               <a
-                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}#code`}
                 target="_blank"
                 rel="noreferrer"
-                className="text-accent hover:underline flex items-center gap-1"
+                className="text-accent hover:underline flex items-center gap-1 font-semibold"
               >
-                <span>Verified Contract: {CONTRACT_ADDRESS.slice(0, 6)}...{CONTRACT_ADDRESS.slice(-4)}</span>
+                <span>Verified Mainnet Contract: {CONTRACT_ADDRESS}</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
@@ -262,4 +369,3 @@ export default function Home() {
     </div>
   );
 }
-
